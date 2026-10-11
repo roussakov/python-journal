@@ -1,0 +1,29 @@
+[project]
+name = "python-journal"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "alembic==1.20.0",
+    "asyncpg==0.32.0",
+    "dotenv>=0.9.9",
+    "fastapi[standard]==0.143.0",
+    "pydantic==2.14.0",
+    "sqlalchemy[asyncio]==2.1,<2.2",
+]
+
+[project.scripts]
+python-journal = "python-journal:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.fastapi]
+entrypoint = "python_journal.main:app"
+
+[dependency-groups]
+dev = [
+    "ruff==0.17.0",
+]
