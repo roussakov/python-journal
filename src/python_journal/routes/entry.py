@@ -14,4 +14,4 @@ async def read_entries(entries_service: Annotated[EntryService, Depends(get_entr
 
 @router.post("/", response_model=EntryResponse)
 async def create_entry(entry: CreateEntryRequest, entries_service: Annotated[EntryService, Depends(get_entry_service)]):
-    return await entries_service.create_entry(entry.content);
+    return await entries_service.create_entry(content=entry.content, tags=entry.tags);

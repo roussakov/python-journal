@@ -32,7 +32,6 @@ if config.config_file_name is not None:
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 from python_journal.models.base import Base
-from python_journal.models.entry import Entry
 
 target_metadata = Base.metadata
 
